@@ -1,0 +1,11 @@
+<h1>Nos résidences</h1>
+
+<div class="cards container">
+  <% @flats.each do |flat| %>
+    <%= link_to flat_path(flat) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= flat.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
