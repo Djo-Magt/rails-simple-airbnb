@@ -1,7 +1,7 @@
 <%= simple_form_for(flat) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
-  <%# <%= f.input :picture_url %>
+  <%= f.input :picture_url %>
   <%= f.input :description %>
   <%= f.input :price_per_night , input_html: { min: 1 } %>
   <%= f.input :number_of_guests , input_html: { min: 1 } %>

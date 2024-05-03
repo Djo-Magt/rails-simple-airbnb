@@ -25,8 +25,12 @@ class FlatsController < ApplicationController
   end
 
   def update
-    @flat.update(flat_params)
-    redirect_to flat_path(@flat)
+    if
+      @flat.update(flat_params)
+      redirect_to flat_path(@flat)
+    else
+      render :new, status:unprocessable_entity
+    end
   end
 
   def destroy
@@ -37,7 +41,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
+    params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests, :picture_url)
   end
 
   def set_flat
